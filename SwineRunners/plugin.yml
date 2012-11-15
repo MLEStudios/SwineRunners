@@ -1,0 +1,9 @@
+name: SwineRunners
+main: net.mlestudios.SwineRunners.Main
+version: 0.1
+description: >
+             SwineRunners Description
+commands:
+    swr:
+      description: The Main command.
+      usage: /swr <command>
