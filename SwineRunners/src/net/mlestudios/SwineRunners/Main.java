@@ -72,9 +72,27 @@ public class Main extends JavaPlugin {
             }
         } else { // is player commands
             if (cmd.getName().equalsIgnoreCase("swr"))
-            {
-            	sender.sendMessage("Hello " + sender.getName());
-            	SwineHerd.spawnPig(player);
+            {            	
+				// run help command by default
+				if(args.length <= 0) { args = new String[] { "help" }; }
+            	
+				// check for help command
+				if(args.length > 0 && args[0].equalsIgnoreCase("help"))
+				{
+					Help.helpSWR(player);
+				}
+				
+	// Leave
+				if(args.length > 0 && args[0].equalsIgnoreCase("leave"))
+				{
+					Game.inGame(player, 0);
+				}
+				
+	// Join
+				if(args.length > 0 && args[0].equalsIgnoreCase("join"))
+				{
+					Game.inGame(player, 1);
+				}
             }
         }
         return false;
